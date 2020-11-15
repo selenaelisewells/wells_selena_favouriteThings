@@ -1,0 +1,23 @@
+.things-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: row;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.thing {
+    flex: 1;
+    box-sizing: border-box;
+    img {
+        max-width: 80%;
+        padding: 10%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .things-section {
+        flex-direction: column;
+    }
+}
