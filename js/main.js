@@ -1,6 +1,7 @@
 // import your packages here
 import { fetchData } from "./modules/TheDataMiner.js";
 
+
 (() => {
     // stub * just a place for non-component-specific stuff
     console.log('loaded');
@@ -16,10 +17,15 @@ import { fetchData } from "./modules/TheDataMiner.js";
         const data = event.currentTarget.dataset;
         console.log(data);
         lightbox.querySelector(".lightImage").src = data.image;
-        lightbox.querySelector(".thing-name").content = data.name;
-        lightbox.querySelector(".thing-description").content = data.description;
+        lightbox.querySelector(".thing-name").innerHTML = data.name;
+        lightbox.querySelector(".thing-description").innerHTML = data.description;
+        lightbox.classList.add('show-lightbox');
 
+    }
 
+    function hideLightBox(event) {
+        const lightbox = document.querySelector(".lightbox");
+        lightbox.classList.remove('show-lightbox');
     }
 
 
@@ -61,4 +67,7 @@ import { fetchData } from "./modules/TheDataMiner.js";
     }
 
     fetchData("./includes/index.php").then(data => renderPortfolioThumbnails(data)).catch(err => console.log(err));
+
+    let lbClose = document.querySelector('.close-lb');
+    lbClose.addEventListener('click', hideLightBox);
 })();
