@@ -1,0 +1,17 @@
+﻿Favourite Things - Changing Content with AJAX - Dev Plan
+
+
+1. Pick 3 Favourite Things - Horror Movies, Cats and Coffee
+2. 4 columns of data - ID, name, image, description
+3. Create the database in PHP my admin
+4. Create a mobile first web page - Use SASS
+5. Create landing / splash page with controls - Use JS to create controls 
+6. Create error handling - Use PHP to control error handling
+
+
+Creating the Lightbox
+
+
+1. For each template set data attributes to be later used by the lightbox along with the src of the image 
+2. Create these attributes inside of for (let thing in thumb)
+3. Use game of thrones example to close and open lightbox
