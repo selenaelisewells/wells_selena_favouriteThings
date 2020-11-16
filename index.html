@@ -13,16 +13,24 @@
 
 <body>
     <main id="app">
+        <section class="lightbox">
+            <span class="close-lb">x</span>
+            <div class="lightInfo">
+                <div class="favThingsImg info"> <img class="lightImage" src="./images/horror.jpg" alt="favourite thing image"></div>
+                <div class="lightText">
+                    <h2 class="thing-name info">Favourite Thing</h2>
+                    <!-- replace with favourite thing name -->
+                    <p class="thing-description info">description goes there</p>
+                </div>
+                <!-- replace with description -->
+            </div>
+        </section>
         <h1 class="title">Hi! I'm Selena and here are a few of my favourite things...</h1>
-
-
 
         <!-- add a users section here -->
         <section class="things-section">
-            <!-- <h1 class="hidden"></h1>
-            <h2 class="user-name"></h2>
-            <p class="user-nickname"></p>
-            <p class="user-role"></p> -->
+            <h2 class="hidden">Favourite Things Section</h2>
+
         </section>
         <!-- end users section -->
     </main>
@@ -31,12 +39,9 @@
 
     <!-- template files here (these don't render) -->
     <template id="things-template">
-        <div class="thing">
+        <div class="thing" data-name="" data-image="" data-description="">
             <h1 class="hidden"></h1>
-            <img src="temp.jpg" alt="favourite thing image image">
-            <!-- <h2 class="user-name"></h2>
-            <p class="user-nickname"></p>
-            <p class="user-role"></p> -->
+            <img src="temp.jpg" alt="favourite thing image">
         </div>
     </template>
     <!-- end templates -->
