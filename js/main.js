@@ -9,25 +9,17 @@ import { fetchData } from "./modules/TheDataMiner.js";
         alert("Something has gone horribly, horribly wrong");
     }
 
-    function handleDataSet(data) {
+    function lightboxHandler(event) {
         //populate a lightbox with this data
         //and then open it
-        document.querySelectorAll(".lightbox");
+        const lightbox = document.querySelector(".lightbox");
+        const data = event.currentTarget.dataset;
+        console.log(data);
+        lightbox.querySelector(".lightImage").src = data.image;
+        lightbox.querySelector(".thing-name").content = data.name;
+        lightbox.querySelector(".thing-description").content = data.description;
 
-        // let userSection = document.querySelector('.user-section'),
-        //     userTemplate = document.querySelector('#user-template').content;
 
-        // for (let user in data) {
-        //     let currentUser = userTemplate.cloneNode(true),
-        //         currentUserText = currentUser.querySelector('.user').children;
-
-        //     currentUserText[1].src = `images/${data[user].avatar}`;
-        //     currentUserText[2].textContent = data[user].name;
-        //     currentUserText[3].textContent = data[user].role;
-        //     currentUserText[4].textContent = data[user].nickname;
-
-        //     // add this new user to the view
-        //     userSection.appendChild(currentUser);
     }
 
 
@@ -45,12 +37,22 @@ import { fetchData } from "./modules/TheDataMiner.js";
             thingTemplate = document.querySelector('#things-template').content;
 
         for (let thing in thumbs) {
+
+
             let currentThing = thingTemplate.cloneNode(true),
-                currentThingText = currentThing.querySelector('.thing').children;
+                currentThingText = currentThing.querySelector('.thing').children,
+                currentThingBox = currentThing.querySelector(".thing");
+
 
             currentThingText[1].src = `images/${thumbs[thing].Image}`;
             currentThingText[1].id = thumbs[thing].ID;
             // add this new thing to the view
+            currentThingBox.dataset.name = thumbs[thing].Name;
+            currentThingBox.dataset.image = `images/${thumbs[thing].Image}`;
+            currentThingBox.dataset.description = thumbs[thing].Description;
+
+            currentThingBox.addEventListener("click", lightboxHandler);
+
 
             thingSection.appendChild(currentThing);
         }
