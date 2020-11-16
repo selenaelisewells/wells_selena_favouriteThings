@@ -4,7 +4,7 @@ This is a simple mobile first web app that showcases three of my favourite thing
 ## Description
 To create this app, I used a combination of HTML, CSS3, JS, PHP and AJAX to grab data from a database and populate it on my page. I also implemented a lightbox using JS to populate more of that data onto the page.
 
-##Installation
+## Installation
 1. Import the database
 2. View using WAMP/MAMP/LAMP to view the page
 
